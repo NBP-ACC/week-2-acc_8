@@ -122,8 +122,8 @@ def experiment(subID):
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_SPACE:
                                 # Time elapsed from stimulus to button press
-                                RT = # TODO
-                                response = # TODO
+                                RT =  clock.tick(FPS)-start # suggestion TODO
+                                response = 1 # suggestion TODO
 
                 fill_background()# clear the screen
                 pygame.display.flip()
