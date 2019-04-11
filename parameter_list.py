@@ -51,11 +51,17 @@ FONTSIZE = 60
 # Set number of trials in the experiment
 # How should you name the variable?
 # TODO
-TRIAL_NUMBER_TOTAL = 100
+
+NUMTRIAL = 100
+# added NUMTRIAL from the readme file 
+
 # Set number of nogo trials in the experiment
 # How should you name the variable?
 # TODO
-TRIAL_NUMBER_NOGO = 20
+
+PCT_NOGO=20
+# added PCT_NOGO from the readme file
+
 # Set the time interval in seconds of the delay
 # from end of trial n and beginning of trial n+1
 TRIALINTERVAL = 1
@@ -71,3 +77,4 @@ FPS = 60
 # where the experiment data for each subject is saved
 # before creating it check if the directory 'Data' already exists
 # TODO
+
