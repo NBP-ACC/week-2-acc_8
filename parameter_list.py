@@ -51,11 +51,11 @@ FONTSIZE = 60
 # Set number of trials in the experiment
 # How should you name the variable?
 # TODO
-
+TRIAL_NUMBER_TOTAL = 100
 # Set number of nogo trials in the experiment
 # How should you name the variable?
 # TODO
-
+TRIAL_NUMBER_NOGO = 20
 # Set the time interval in seconds of the delay
 # from end of trial n and beginning of trial n+1
 TRIALINTERVAL = 1
