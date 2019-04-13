@@ -74,6 +74,12 @@ def writeData(datalist, subID):
     # add a header ('SubjectID','StimulusType','response','RT') to the csvfile
     # and write each entry of datalist to a single row
     # TODO
+    with open('Sub[%d].csv' %subID, 'w', newline='') as csvfile: # creates the csv file
+        writer = csv.writer(csvfile, delimiter=' ') # converts the data into delimited strings
+        writer.writerow(('SubjectID', 'StimulusType', 'response', 'RT')) # header
+        # writes each entry from the datalist to a single row
+        for entry in datalist:
+            writer.writerow(entry)
 
 
 ######                 main experiment loop            ##########
