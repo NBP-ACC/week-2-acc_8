@@ -87,8 +87,10 @@ def experiment(subID):
     #List where all the repsonses are stored
     dataFile = []
     pygame.mouse.set_visible(False)
-    stimuli_list = [1]*int(NUMTRIAL- NUMTRIAL*PCT_NOGO)
-    nogo_trials = [0]*int(NUMTRIAL*PCT_NOGO)
+    stimuli_list = [1]*int(NUMTRIAL-PCT_NOGO) 
+      #line stimuli_list = [1]*int(NUMTRIAL- NUMTRIAL*PCT_NOGO) fixed
+    nogo_trials = [0]*int(PCT_NOGO)
+      #line nogo_trials = [0]*int(NUMTRIAL*PCT_NOGO) fixed 
     stimuli_list.extend(nogo_trials)
     random.shuffle(stimuli_list)
     #Flag to check when the experiment loop ends
