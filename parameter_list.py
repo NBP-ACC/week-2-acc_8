@@ -77,4 +77,9 @@ FPS = 60
 # where the experiment data for each subject is saved
 # before creating it check if the directory 'Data' already exists
 # TODO
+current_directory = os.getcwd() # checks current directory
+final_directory = os.path.join(current_directory, r'Data') # creates a new folder called 'Data' inside the directory
+# checks whether the folder already exists
+if not os.path.exists(final_directory):
+    os.makedirs(final_directory) # NOT FINISHED, SHOULD SAVE DATA INSIDE 
 
