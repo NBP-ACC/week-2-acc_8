@@ -12,8 +12,8 @@ SCREENSIZE = (800,600)
 infoObject = pygame.display.Info()
 #set screen size based on size of monitor
 SCREEN = pygame.display.set_mode((infoObject.current_w, infoObject.current_h))
-# SCREEN = pygame.display.set_mode(SCREENSIZE)
-# SCREEN = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
+#SCREEN = pygame.display.set_mode(SCREENSIZE)
+#SCREEN = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
 
 
 #Get width and height of the screen at fullscreen mode
@@ -70,6 +70,7 @@ FPS = 60
 # where the experiment data for each subject is saved
 current_directory = os.getcwd() # checks current directory
 final_directory = os.path.join(current_directory, r'Data') # creates a new folder called 'Data' 
-if not os.path.exists(final_directory):
-    os.makedirs(final_directory) # checks whether the folder already exists
+# checks whether the folder already exists
+if not os.path.exists(final_directory): 
+    os.makedirs(final_directory) # changes the directory if it does not exist
 
