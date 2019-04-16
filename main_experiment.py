@@ -70,14 +70,11 @@ def writeData(datalist, subID):
     """
     Function to write the list of responses to a csv dataFile
     """
-    # create a csvfile for each subject and name it: Sub[subID].csv
-    # add a header ('SubjectID','StimulusType','response','RT') to the csvfile
-    # and write each entry of datalist to a single row
-    # TODO
+    final_firectory = os.chdir(final_directory) # set the data directory from parameter_list
     with open('Sub[%d].csv' %subID, 'w', newline='') as csvfile: # creates the csv file
         writer = csv.writer(csvfile, delimiter=' ') # converts the data into delimited strings
         writer.writerow(('SubjectID', 'StimulusType', 'response', 'RT')) # header
-        # writes each entry from the datalist to a single row
+        #writes each entry from the datalist to a single row
         for entry in datalist:
             writer.writerow(entry)
 
@@ -87,10 +84,8 @@ def experiment(subID):
     #List where all the repsonses are stored
     dataFile = []
     pygame.mouse.set_visible(False)
-    stimuli_list = [1]*int(NUMTRIAL-PCT_NOGO) 
-      #line stimuli_list = [1]*int(NUMTRIAL- NUMTRIAL*PCT_NOGO) fixed
-    nogo_trials = [0]*int(PCT_NOGO)
-      #line nogo_trials = [0]*int(NUMTRIAL*PCT_NOGO) fixed 
+    stimuli_list = [1]*int(NUMTRIAL-PCT_NOGO) # list of go trials
+    nogo_trials = [0]*int(PCT_NOGO) # list of nogo trials
     stimuli_list.extend(nogo_trials)
     random.shuffle(stimuli_list)
     #Flag to check when the experiment loop ends
@@ -130,8 +125,8 @@ def experiment(subID):
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_SPACE:
                                 # Time elapsed from stimulus to button press
-                                RT =  clock.tick(FPS)-start # suggestion TODO
-                                response = 1 # suggestion TODO
+                                RT =  pygame.time.get_ticks()-start # measures reaction time
+                                response = 1 # RT is only for go trials
 
                 fill_background()# clear the screen
                 pygame.display.flip()
@@ -144,7 +139,7 @@ def experiment(subID):
 
 if __name__ == "__main__":
     #Fill this before start of the experiment
-    subID = # TODO ID of the subject
+    subID = # ID of the subject
     dataFile = experiment(subID)
     print('*'*30)
     print('Writing in data file: Sub{}.csv'.format(subID))

@@ -48,19 +48,12 @@ BG_COLOR = (123,123,123)
 
 #Set fontsize of the text
 FONTSIZE = 60
-# Set number of trials in the experiment
-# How should you name the variable?
-# TODO
 
+# Set number of trials in the experiment
 NUMTRIAL = 100
-# added NUMTRIAL from the readme file 
 
 # Set number of nogo trials in the experiment
-# How should you name the variable?
-# TODO
-
-PCT_NOGO=20
-# added PCT_NOGO from the readme file
+PCT_NOGO = 20
 
 # Set the time interval in seconds of the delay
 # from end of trial n and beginning of trial n+1
@@ -75,11 +68,8 @@ FPS = 60
 
 # Create a directory called 'Data' in your working-directory
 # where the experiment data for each subject is saved
-# before creating it check if the directory 'Data' already exists
-# TODO
 current_directory = os.getcwd() # checks current directory
-final_directory = os.path.join(current_directory, r'Data') # creates a new folder called 'Data' inside the directory
-# checks whether the folder already exists
+final_directory = os.path.join(current_directory, r'Data') # creates a new folder called 'Data' 
 if not os.path.exists(final_directory):
-    os.makedirs(final_directory) # NOT FINISHED, SHOULD SAVE DATA INSIDE 
+    os.makedirs(final_directory) # checks whether the folder already exists
 
