@@ -70,7 +70,7 @@ def writeData(datalist, subID):
     """
     Function to write the list of responses to a csv dataFile
     """
-    final_firectory = os.chdir(final_directory) # set the data directory from parameter_list
+    os.chdir(final_directory) # set the data directory from parameter_list
     with open('Sub[%d].csv' %subID, 'w', newline='') as csvfile: # creates the csv file
         writer = csv.writer(csvfile, delimiter=' ') # converts the data into delimited strings
         writer.writerow(('SubjectID', 'StimulusType', 'response', 'RT')) # header
@@ -139,7 +139,7 @@ def experiment(subID):
 
 if __name__ == "__main__":
     #Fill this before start of the experiment
-    subID = # ID of the subject
+    subID =  # ID of the subject
     dataFile = experiment(subID)
     print('*'*30)
     print('Writing in data file: Sub{}.csv'.format(subID))
